@@ -159,8 +159,8 @@ static Key keys[] = {
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
-	{ MODKEY,			XK_z,		spawn,		SHCMD("killall sxhkd; sxhkd -c /home/$USER/.config/sxhkd/killclient & notify-send 'kill client enabled'") },
-	{ MODKEY|Mod1Mask,		XK_q,		killclient,	{0} },
+	/*{ MODKEY,			XK_z,		spawn,		SHCMD("killall sxhkd; sxhkd -c /home/$USER/.config/sxhkd/killclient & notify-send 'kill client enabled'") },*/
+	{ MODKEY,			XK_q,		killclient,	{0} },
 	{ MODKEY|ControlMask,		XK_q,		spawn,		SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
@@ -204,10 +204,12 @@ static Key keys[] = {
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
 	{ MODKEY|ShiftMask,		XK_apostrophe,	togglesmartgaps,	{0} },
 	{ MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
-	{ MODKEY|ControlMask,		XK_Return,	togglescratch,	{.ui = 0} },
+	{ MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 	{ Mod1Mask,			XK_Return,      spawn,          {.v = tabtermcmd } },
 
 	/* { MODKEY|ShiftMask,		XK_z,		spawn,		SHCMD("") }, */
+	{ MODKEY,			XK_z,		togglegaps,	{0} },
+	{ MODKEY|ShiftMask,		XK_z,		defaultgaps,	{0} },
 	{ MODKEY,			XK_x,		incrgaps,	{.i = +3 } },
 	{ MODKEY|ShiftMask,		XK_x,		incrgaps,	{.i = -3 } },
 	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "profanity", NULL } } },
